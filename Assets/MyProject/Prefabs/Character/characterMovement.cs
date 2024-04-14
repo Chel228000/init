@@ -7,7 +7,6 @@ public class characterMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     public float speed = 10;
-    [SerializeField] float sensitivity;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +21,7 @@ public class characterMovement : MonoBehaviour
     }
     void TestInput()
     {
-
         movement();
-        rotate();
 
         void movement()
         {
@@ -40,12 +37,7 @@ public class characterMovement : MonoBehaviour
 
             rb.AddForce(movementDirection,ForceMode.VelocityChange);
         }
-        void rotate()
-        {
-            float mousex = Input.GetAxis("Mouse X")*sensitivity;
 
-            transform.Rotate(Vector3.up * mousex);
-        }
     }
 
 }
