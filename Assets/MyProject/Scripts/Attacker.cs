@@ -12,7 +12,6 @@ public class Attacker : MonoBehaviour
     [SerializeField] private LayerMask damageMask;
     [SerializeField] private Weapon weapon;
     [SerializeField] private Transform hand;
-    public float radius;
 
     Collider[] hits = new Collider[3];
     private float attackTime;
@@ -34,14 +33,12 @@ public class Attacker : MonoBehaviour
         {
             AnimateAttack();
             resetAttackTimer();
-            AttackNearEnemies();
-
         }
     }
 
-    private void AttackNearEnemies()
+    public void AttackNearEnemies()
     {
-        int count = Physics.OverlapSphereNonAlloc(transform.position, radius, hits, damageMask);
+        int count = Physics.OverlapSphereNonAlloc(transform.position, weapon.range, hits, damageMask);
 
         for(int i = 0; i < count; i++)
         {
@@ -55,7 +52,6 @@ public class Attacker : MonoBehaviour
     private void AnimateAttack()
     {
         var index = Random.Range(0, 2);
-        animator.SetInteger("AttackIndex", index);
         animator.SetTrigger("Attack");
     }
 

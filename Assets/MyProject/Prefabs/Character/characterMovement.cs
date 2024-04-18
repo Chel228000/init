@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
@@ -40,4 +41,8 @@ public class characterMovement : MonoBehaviour
 
     }
 
+    internal void Stop()
+    {
+        throw new NotImplementedException();
+    }
 }
