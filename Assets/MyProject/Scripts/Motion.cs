@@ -10,10 +10,16 @@ public class Motion : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private InputMAnager _input;
     [SerializeField] private Animator animator;
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
     private Camera cam;
 
-    private void Start() => cam = Camera.main;
+    private void Start()
+    {
+        cam = Camera.main;
+        controller = GetComponent<CharacterController>();
+        _input = GetComponent<InputMAnager>();
+        animator = GetComponent<Animator>();
+    }
 
 
     private void Update()

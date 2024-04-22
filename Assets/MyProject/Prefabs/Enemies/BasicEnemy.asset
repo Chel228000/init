@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d161e247eb7fa4183c2ce24665b85c, type: 3}
+  m_Name: BasicEnemy
+  m_EditorClassIdentifier: 
+  _health: 100
+  _speed: 6
+  _damageMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _weapon: {fileID: 11400000, guid: 17e8a2412653a2043a78d5e27a520c2b, type: 2}
+  enemy: {fileID: 6069065789980236261, guid: 5663eb625601a4744800ed2b44815106, type: 3}

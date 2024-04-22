@@ -10,9 +10,13 @@ public class HealthBAr : MonoBehaviour
     public Slider hpslider;
     public Health CharacterHealth;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        hpslider.maxValue = CharacterHealth.maxHealth;
+    }
     void Update()
     {
+
         HpText.text = CharacterHealth.current_health+"/"+CharacterHealth.maxHealth;
         hpslider.value = CharacterHealth.current_health;
     }

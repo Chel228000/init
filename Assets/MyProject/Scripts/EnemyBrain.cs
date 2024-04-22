@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class EnemyBrain : MonoBehaviour
 {
-    [SerializeField] private Health health;
+    [SerializeField] public Health health;
     [SerializeField] private NavMeshMover mover;
     [SerializeField] private Attacker enemyAttacker;
+    [SerializeField] private EnemySO enemySO;
 
     private Health player;
-    void Start() => player = FindObjectOfType<Motion>().GetComponent<Health>();
+    void Start()
+    {
+        health.maxHealth = enemySO._health;
+        mover._agent.speed = enemySO._speed;
+        enemyAttacker.weapon = enemySO._weapon;
+        player = FindObjectOfType<Motion>().GetComponent<Health>();
+        health.current_health = health.maxHealth;
+    } 
 
     // Update is called once per frame
     void Update()

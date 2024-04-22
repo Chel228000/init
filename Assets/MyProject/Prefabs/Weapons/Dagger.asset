@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 126d745d56708f04190563e2470f32a7, type: 3}
-  m_Name: Sword
+  m_Name: Dagger
   m_EditorClassIdentifier: 
-  attackCooldown: 1
-  damage: 100
-  range: 2
-  prefab: {fileID: 2681516157327871506, guid: e30994ebf4f5de04b98613359fd5f561, type: 3}
+  attackCooldown: 0.5
+  damage: 40
+  range: 1
+  prefab: {fileID: 3285149742555651310, guid: 81c828a287d02b94192e1f24f31f7d7f, type: 3}

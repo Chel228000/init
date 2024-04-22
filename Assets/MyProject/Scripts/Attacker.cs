@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.Oculus.Input;
 using UnityEngine;
 
 public class Attacker : MonoBehaviour
@@ -9,8 +10,8 @@ public class Attacker : MonoBehaviour
 
     public bool isAttacking { get; private set; }
     [SerializeField] private Animator animator;
-    [SerializeField] private LayerMask damageMask;
-    [SerializeField] private Weapon weapon;
+    [SerializeField] public LayerMask damageMask;
+    [SerializeField] public Weapon weapon;
     [SerializeField] private Transform hand;
 
     Collider[] hits = new Collider[3];
@@ -20,6 +21,8 @@ public class Attacker : MonoBehaviour
     void Start()
     {
         resetAttackTimer();
+        animator = GetComponent<Animator>();
+        
         Instantiate(weapon.prefab, hand);
     }
 
